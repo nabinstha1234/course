@@ -1,0 +1,11 @@
+.update_button {
+    background-color:#eebf31 !important;
+    padding:0 20px 0 20px;
+    color:#333;
+    font-size: 12px;
+    font-weight: bold !important;
+    border: 0 !important;
+    border-radius: 1 !important;
+    line-height: 1.8 !important;
+    letter-spacing: 0.7px !important;
+}

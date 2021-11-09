@@ -1,0 +1,34 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block head_title %} Business Detail {% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/businessDetail.css' %}">
+
+    <form action="{% url 'pages:business-detail' user.id %}" id="businessDetailUpdate" method="POST">
+        {% csrf_token %}
+    <div class="businessDetail__container">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Company/Store Name</label>
+            <input type="text" class="form-control" name="store_name" id="store_name"
+                   value="{{ user_profile.store_name }}">
+            <div class="help-block with-errors"></div>
+        </div>
+        <div class="form-group  has-error">
+            <label><strong>Phone<span class="required_class"
+                                      style="color:#FF0000;">*</span></strong></label>
+            <input type="text" name="phone" class="form-control" id="phone"  value="{{ user_profile.phone}}" required>
+            <div class="help-block with-errors">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="radio-inline">Supplier</label> <input type="radio" name="user_status" value="0" {% if user_profile.user_status == '0' %}checked="checked"{% endif %}>
+            <label class="radio-inline">Retailer</label> <input type="radio" name="user_status" value="1" {% if user_profile.user_status == '1' %}checked="checked"{% endif %}>
+            <label class="radio-inline">Both</label> <input type="radio" name="user_status" value="2" {% if user_profile.user_status == '2' %}checked="checked"{% endif %}>
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm  business__DetailButton" style="float: right;">SAVE CHANGES</button>
+    </div>
+
+    </form>
+{% endblock %}

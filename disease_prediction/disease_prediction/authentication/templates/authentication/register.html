@@ -1,0 +1,158 @@
+{% extends 'layouts/login.html' %}
+{% load static %}
+
+{% block head_title %} Registration {% endblock %}
+{% block page_title %} Registration {% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
+
+<div class="register">
+    <div class="register__container">
+            <div class="login__header">
+                <h2>REGISTRATION</h2>
+            </div>
+        {% include 'snippets/messages.html' %}
+        <form action="{% url 'authentication:register' %}" class="register__form" id="registerForm" method="POST">
+            {% csrf_token %}
+            <div class="form-group  has-error">
+                <label><strong>Email <span class="required_class">*</span></strong></label>
+                <input type="text" name="email" id="email" class="form-control" required>
+                <div class="help-block with-errors">
+                </div>
+            </div>
+             <div class="form-group  has-error">
+                <label><strong>First Name </strong></label>
+                <input type="text" name="first_name" id="first_name" class="form-control" required>
+                <div class="help-block with-errors">
+                </div>
+            </div>
+            <div class="form-group  has-error">
+                <label><strong>Last Name </strong></label>
+                <input type="text" name="last_name" id="last_name" class="form-control" required>
+                <div class="help-block with-errors">
+                </div>
+            </div>
+            <div class="form-group  has-error">
+                <label><strong>Company/Store Name </strong></label>
+                <input type="text" name="company" id="company" class="form-control">
+                <div class="help-block with-errors">
+                </div>
+            </div>
+            <div class="form-group  has-error">
+                <label><strong>Address <span class="required_class">*</span> </strong></label>
+                <input type="text" name="address" id="address" class="form-control" required>
+                <div class="help-block with-errors">
+                </div>
+            </div>
+            <div class="form-group  has-error">
+                <label><strong>Country <span class="required_class">*</span> </strong></label>
+                <select class="form-control" name="country" id="country">
+                <option>Select a Country</option>
+                   {% for country in countries %}
+                       <option value="{{ country.id }}">{{ country.name}}</option>
+                   {% endfor %}
+                </select>
+                <div class="help-block with-errors">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-4">
+                    <label><strong>City/Town</strong></label>
+                    <input type="text" name="city" class="form-control" id="city">
+                </div>
+                <div class="col-md-4 state_info">
+                    <label><strong>State/Country <span class="required_class">*</span></strong></label>
+                    <select class="form-control" name="state" id="state">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label><strong>Postcode/Zip <span class="required_class">*</span></strong></label>
+                    <input type="text" name="zip" class="form-control" id="zip">
+                </div>
+            </div>
+            <div class="form-group  has-error">
+                <label><strong>Phone <span class="required_class">*</span></strong></label>
+                <input type="text" name="phone" class="form-control" id="phone" required>
+                <div class="help-block with-errors">
+                </div>
+            </div>
+            <div class="form-group register__as">
+                <label class="radio-inline">Supplier</label> <input type="radio" name="status" value="0">
+                <label class="radio-inline">Retailer</label> <input type="radio" name="status" value="1">
+                <label class="radio-inline">Both</label> <input type="radio" name="status" value="2">
+            </div>
+            <div class="form-group  has-error">
+                <label><strong>Password <span class="required_class">*</span></strong></label>
+                <input type="password" name="password1" class="form-control" id="password" required>
+                <div class="help-block with-errors">
+                </div>
+            </div>
+            <div class="form-group  has-error">
+                <label><strong>Confirm Password <span class="required_class">*</span></strong></label>
+                <input type="password" name="password2" class="form-control" id="confirm_password" required>
+                <div class="help-block with-errors">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-md btn-block register_button " id="register">REGISTER</button>
+        </form>
+            <h6 class="policy">By continuing, you agree to accept our</h6>
+            <h6 class="policy">Privacy Policy & Terms of Service.</h6>
+
+        <h5 class="register__login">ALREADY HAVE AN ACCOUNT? LOG IN <a href="{% url 'authentication:login' %}">HERE</a></h5>
+    </div>
+</div>
+<script type="text/javascript" src="{% static 'js/password.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery_validation.js' %}"></script>
+
+<script>
+    $('#registerForm').validate({
+        rules: {
+            confirm_password: {
+                equalTo: "#password"
+            },
+        },
+        messages: {
+            confirm_password: {
+                equalTo: "Passwords do not match."
+            }
+        }
+
+    });
+    $('#password').strongifyPassword();
+    function myFunction() {
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+    $('#country').on('change',function(){
+        let data = {
+            country: $(this).val()
+        }
+        $.ajax({
+            url: '{% url "authentication:state" %}',
+            data: data,
+            success: function (response) {
+                let state = $('#state');
+                state.empty()
+                console.log(response, "Resonse")
+                if(response.states.length === 0 ){
+                    $('#state').hide()
+                    $('.state_info')
+                    .append("<input class='form-control' type='text' name='state_name' id='state_name'>")
+                }else{
+                $.each(response.states, function (index, element) {
+                    console.log(element.name +'Element')
+                            state.append("<option value='" + element.id + "'>" + element.name + "</option>")
+                        })
+             }
+                }
+
+        })
+    })
+
+</script>
+{% endblock %}

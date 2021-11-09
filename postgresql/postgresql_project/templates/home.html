@@ -1,0 +1,10 @@
+<!-- templates/home.html-->
+
+{% extends '_base.html'%}
+
+{%block title%} Home {%endblock title%}
+
+{%block content%}
+<h1>Homepage</h1>
+<a href="{% url 'export-pdf'%}">click to export</a>
+{%endblock content%}

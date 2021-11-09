@@ -1,0 +1,153 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block head_title %} Shipping Address{% endblock %}
+{% block page_title %} Shipping Address {% endblock %}
+
+{% block content %}
+    <form action="{% url 'pages:shipping-address' user.id %}" id="billingAddress" method="POST">
+        {% csrf_token %}
+        <div class="row">
+            <div class="form-group col-md-6 has-error">
+                <label for="exampleFormControlInput1">First name<span class="required_class"
+                                                                      style="color:#FF0000;">*</span></label>
+                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name"
+                       value="{{ shipping_address.first_name }}" required>
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group col-md-6 has-error">
+                <label for="exampleFormControlInput1">Last Name<span class="required_class"
+                                                                     style="color:#FF0000;">*</span></label>
+                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name"
+                       value="{{ shipping_address.last_name }}" required>
+                <div class="help-block with-errors"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6 has-error">
+                <label for="exampleFormControlInput1">Company Name(optional)</label>
+                <input type="text" class="form-control" name="store_name" id="store_name"
+                       value="{{ shipping_address.store_name }}">
+            </div>
+            <div class="form-group col-md-6 has-error">
+                <label><strong>Country <span class="required_class">*</span> </strong></label>
+                <select class="form-control" name="country" id="country">
+                    {% for country in countries %}
+                        <option value="{{ country.id }}"
+                                {% if country.id == shipping_address.country_id %}
+                                selected {% endif %}>{{ country.name }}
+                        </option>
+                    {% endfor %}
+                </select>
+                <div class="help-block with-errors">
+                </div>
+            </div>
+        </div>
+        <div class="form-group  has-error">
+            <label for="exampleFormControlInput1">Address<span class="required_class"
+                                                               style="color:#FF0000;">*</span></label>
+            <input type="text" class="form-control" name="address" id="address"
+                   value="{{ shipping_address.address }}" required>
+            <div class="help-block with-errors"></div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6 has-error">
+                <label for="exampleFormControlInput1">Apartment,suite,unit,etc(optional)</label>
+                <input type="text" class="form-control" name="apartment" id="appartment"
+                       value="{{ shipping_address.apartment }}">
+            </div>
+            <div class="form-group col-md-6 has-error">
+                <label for="exampleFormControlInput1">City/Town<span class="required_class"
+                                                                     style="color:#FF0000;">*</span></label>
+                <input type="text" class="form-control" name="city" id="city"
+                       value="{{ shipping_address.city }}" required>
+                <div class="help-block with-errors"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6 has-error">
+                <label for="exampleFormControlInput1">Postcode/Zip <span class="required_class"
+                                                                         style="color:#FF0000;">*</span></label>
+                <input type="text" class="form-control" name="zip" id="zip"
+                       value="{{ shipping_address.zip }}">
+            </div>
+            {% if shipping_address.state_id and shipping_address.state_name %}
+                <div class="col-md-6 state_info">
+                    <label>State/Country <span class="required_class" style="color:#FF0000;">*</span></label>
+                    <select class="form-control" name="state" id="state">
+                        {% for state in states %}
+                            <option value="{{ state.id }}"
+                                    {% if state.id == shipping_address.state_id %}
+                                    selected {% endif %}>{{ state.name }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+            {% elif shipping_address.state_id == Null and shipping_address.state_name != Null  %}
+                <div class="col-md-6">
+                    <label>State/Country <span class="required_class" style="color:#FF0000;">*</span></label>
+                    <select class="form-control d-none" name="state" id="state" >
+                    </select>
+                    <input class='form-control' type='text' name='state_name' id='state_name'
+                           value="{{ shipping_address.state_name }}">
+                </div>
+            {% else %}
+                <div class="col-md-6 state_info">
+                    <label>State/Country <span class="required_class" style="color:#FF0000;">*</span></label>
+                    <select class="form-control" name="state" id="state">
+                    </select>
+                </div>
+            {% endif %}
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6 has-error">
+                <label for="exampleFormControlInput1">Email<span class="required_class"
+                                                                 style="color:#FF0000;">*</span></label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="email address"
+                       value="{{ user.email }}" required>
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group col-md-6  has-error">
+                <label>Phone<span class="required_class"
+                                  style="color:#FF0000;">*</span></label>
+                <input type="text" name="phone" class="form-control" id="phone" value="{{ shipping_address.phone }}"
+                       required>
+                <div class="help-block with-errors">
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm update_button" style="float: right;">SAVE CHANGES</button>
+    </form>
+    <script>
+    $('#country').on('change',function(){
+        let data = {
+            country: $(this).val()
+        }
+        $.ajax({
+            url: '{% url "authentication:state" %}',
+            data: data,
+            success: function (response) {
+                let state = $('#state');
+                state.empty()
+                if(response.states.length === 0 ){
+                    alert('here')
+                    $('#state').hide()
+                    $('#state_name').show()
+                    $('.state_info')
+                    .append("<input class='form-control' type='text' name='state_name' id='state_name'>")
+                }else{
+                    $('#state').show()
+                    $('#state').removeClass('d-none')
+                    $('#state_name').hide()
+                    $.each(response.states, function (index, element) {
+                    console.log(element.name +'Element')
+                            state.append("<option value='" + element.id + "'>" + element.name + "</option>")
+                        })
+                }
+            }
+        })
+    })
+    </script>
+
+{% endblock %}

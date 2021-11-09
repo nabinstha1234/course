@@ -1,0 +1,72 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block head_title %} Dashboard {% endblock %}
+{% block page_title %} Dashboard {% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-3">
+        <div class="card m-3" style="border-width: 12px; border-color: #45423E;">
+            <div class="card-body text-center">
+                <div class="m-5">
+                    <img src="{% static 'img/upload.svg' %}" alt="Upload catalogs">
+                </div>
+                <a href="#" class="btn btn-warning btn-block text-uppercase font-weight-bold">Upload catalog</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card m-3" style="border-width: 12px; border-color: #45423E;">
+            <div class="card-body text-center">
+                <div class="my-4 mx-5">
+                    <img src="{% static 'img/file.svg' %}" alt="Manage catalogs">
+                </div>
+                <a href="#" class="btn btn-warning btn-block text-uppercase font-weight-bold">Manage catalogs</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card m-3" style="border-width: 12px; border-color: #45423E;">
+            <div class="card-body text-center">
+                <div class="m-5">
+                    <img src="{% static 'img/box.svg' %}" alt="Upload">
+                </div>
+                <a href="#" class="btn btn-warning btn-block text-uppercase font-weight-bold">Manage products</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card m-3" style="border-width: 12px; border-color: #45423E;">
+            <div class="card-body text-center">
+                <div class="m-5">
+                    <img src="{% static 'img/cart.svg' %}" alt="Cart">
+                </div>
+                <a href="#" class="btn btn-warning btn-block text-uppercase font-weight-bold">Orders</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card m-3" style="border-width: 12px; border-color: #45423E;">
+            <div class="card-body text-center">
+                <div class="m-5">
+                    <img src="{% static 'img/download.svg' %}" alt="Download">
+                </div>
+                <a href="#" class="btn btn-warning btn-block text-uppercase font-weight-bold">Download CSV Template</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card m-3" style="border-width: 12px; border-color: #45423E;">
+            <div class="card-body text-center">
+                <div class="m-5">
+                    <img src="{% static 'img/users.svg' %}" alt="Retailers">
+                </div>
+                <a href="#" class="btn btn-warning btn-block text-uppercase font-weight-bold">Retailers</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+

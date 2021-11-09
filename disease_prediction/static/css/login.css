@@ -1,0 +1,84 @@
+.login {
+    height: 100vh;
+    width: 100%;
+}
+
+body {
+    background-color: lightgray;
+    background-attachment: fixed;
+}
+.login__header{
+    margin-bottom:-40px;
+}
+
+.login__container {
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid lightgray;
+}
+
+.login__image {
+    width: 100px;
+    height: 100px;
+}
+
+.login__logo {
+    display: flex;
+    margin-bottom: 20px;
+
+}
+
+.login__header > h2 {
+    display: flex;
+    margin-top: 20px;
+}
+
+.login__passwordReset{
+    float:right;
+    margin-top:-10px;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+.login__passwordReset > a {
+    color:gray;
+}
+
+.login__userForm{
+    padding: 30px;
+    margin: 40px;
+}
+
+.help-block.with-errors {
+    color: #EF6F6C;
+}
+.login_button {
+    background-color:#eebf31 !important;
+    color:#333;
+    font-weight: bold !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    line-height: 1.8 !important;
+    letter-spacing: 0.7px !important;
+    margin-bottom: -25px;
+}
+
+.policy{
+    font-size:smaller;
+    text-align: center;
+}
+
+.register__login {
+    text-align: center;
+    color:gray;
+    margin-top:20px;
+    font-size:15px;
+    margin-bottom:30px;
+}
+.register__login > a {
+    color: gray;
+    text-decoration: underline;
+
+}
+

@@ -1,0 +1,124 @@
+﻿{% extends "basic.html" %}
+{% load static %}
+{% block head %}
+{% endblock %}
+{% block body %}
+
+<div class="jumbotron">
+    <h1 class="display-4">Be your own doctor...</h1>
+    <p class="lead">
+        It might have happened so many times that you or someone yours need doctor’s help immediately,
+        but they are not available due to some reasons.The Disease Prediction system is an end user
+        support and online consultation project. Here, we propose a web application that allow users
+        to get instant guidance on their disease through an intelligent system. The application is
+        fed with various details and the disease associated with those details.The application allows
+        user to share their disease related issues.It then processes user specific details to check
+        for various illness that could be associated with it.Here we use some intelligent data mining
+        techniques to guess the most accurate illness that could be associated with patient’s details.
+        Based on result, patient can contact doctor accordingly for further treatment.
+        {% if user.is_authenticated %}
+        {% else %}
+    <p class="lead">
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=".bd-example-modal-lg">Get
+            started
+        </button>
+    </p>
+</div>
+<br><br><br>
+<div class="container mt-5 mb-3" style="width:fit-content;">
+    <center>
+        <h1>Sign-In As</h1>
+    </center>
+    <form>
+        <div class="container mt-5 mb-5">
+            <div class="row">
+                <div class="col">
+                    <a href="{% url 'sign_in_admin' %}">
+                        <img alt="admin" src="{% static 'homepage/admin.PNG' %}" class="img">
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="{% url 'sign_in_doctor' %}">
+                        <img alt="doctor" src="{% static 'homepage/doctor.PNG' %}" class="img">
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="{% url 'sign_in_patient' %}">
+                        <img alt="patient" src="{% static 'homepage/patient.PNG' %}" class="img">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{% endif %}
+<br><br>
+<!-- Large modal -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <center>
+                <h1>Sign-In As</h1>
+            </center>
+            <br><br>
+            <center>
+                <form>
+                    <div class="container mt-5 mb-5">
+                        <div class="row">
+                            <div class="col">
+                                <a href="{% url 'sign_in_admin' %}">
+                                    <img alt="admin" src="{% static 'homepage/admin.PNG' %}" class="img">
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a href="{% url 'sign_in_doctor' %}">
+                                    <img alt="doctor" src="{% static 'homepage/doctor.PNG' %}" class="img">
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a href="{% url 'sign_in_patient' %}">
+                                    <img alt="patient" src="{% static 'homepage/patient.PNG' %}" class="img">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </center>
+
+        </div>
+    </div>
+</div>
+
+<!-- Large modal -->
+<div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <center>
+                <h1>Sign-Up As</h1>
+            </center>
+            <br><br>
+            <center>
+                <form>
+                    <div class="container mt-5 mb-5 ml-5 mr-5">
+                        <div class="row">
+                            <div class="col">
+                                <a href="{% url 'signup_doctor' %}">
+                                    <img alt="doctor" src="{% static 'homepage/doctor.PNG' %}" class="img">
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a href="{% url 'signup_patient' %}">
+                                    <img alt="patient" src="{% static 'homepage/patient.PNG' %}" class="img">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </center>
+        </div>
+    </div>
+</div>
+<br><br><br><br>
+{% endblock %}

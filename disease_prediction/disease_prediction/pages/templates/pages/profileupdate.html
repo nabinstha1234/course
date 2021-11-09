@@ -1,0 +1,89 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block head_title %} Profile Update {% endblock %}
+{% block page_title %} Profile Update {% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/profile_update.css' %}">
+    <form action="{% url 'pages:profile-update' user.id %}" id="profileUpdate" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Email<span class="required_class"
+                                                             style="color:#FF0000;">*</span></label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="email address"
+                   value="{{ user.email }}" required>
+            <div class="help-block with-errors"></div>
+        </div>
+        <div class="form-group has-error">
+            <label for="exampleFormControlInput1">First name<span class="required_class" style="color:#FF0000;">*</span></label>
+            <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name"
+                   value="{{ user.first_name }}" required>
+            <div class="help-block with-errors"></div>
+        </div>
+        <div class="form-group hsa-error">
+            <label for="exampleFormControlInput1">Last Name<span class="required_class" style="color:#FF0000;">*</span></label>
+            <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name"
+                   value="{{ user.last_name }}" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">DisplayName<span class="required_class"
+                                                                   style="color:#FF0000;">*</span></label>
+            <input type="text" class="form-control" name="displayName" id="display_name"
+                   value="{{ user.first_name }} {{ user.last_name }}">
+        </div>
+        <h6>This is the name that will be displayed to users</h6>
+
+        <h3>Password Change </h3>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Current password(leave blank to leave unchanged)</label>
+            <input type="password" class="form-control" name="old_password" id="current_password" value="">
+        </div>
+        <div class="form-group has-error">
+            <label for="exampleFormControlInput1">New password(leave blank to leave unchanged)</label>
+            <input type="password" class="form-control" name="new_password1" id="new_password">
+            <div class="help-block with-errors"></div>
+        </div>
+        <div class="form-group has-error">
+            <label for="exampleFormControlInput1">Confirm new password</label>
+            <input type="password" class="form-control" name="new_password2" id="confirm_new_password">
+            <div class="help-block with-errors"></div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm update_button" style="float: right;">SAVE CHANGES</button>
+    </form>
+    <script type="text/javascript" src="{% static 'js/password.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery_validation.js' %}"></script>
+    <script>
+        $('#profileUpdate').validate({
+            rules: {
+                confirm_new_password: {
+                    equalTo: "#new_password"
+                },
+            },
+            messages: {
+                confirm_new_password: {
+                    equalTo: "Passwords do not match."
+                }
+            }
+
+        });
+        $('#new_password').strongifyPassword();
+        function myFunction() {
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+        $('#current_password').keypress(function () {
+            if ($(this).val().length > 0) {
+                $('#new_password').prop('required', true)
+                $('#confirm_new_password').prop('required', true)
+            } else {
+                $('#new_password').prop('required', false)
+                $('#confirm_new_password').prop('required', false)
+            }
+        })
+    </script>
+{% endblock %}

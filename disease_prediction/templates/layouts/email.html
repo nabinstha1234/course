@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block head_title %}{% endblock %}</title>
+        <style>
+            body {
+                font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                color: #434245;
+                background: #eeeeee;
+            }
+
+            h1 {
+                font-size: 30px;
+                font-weight: 900;
+                line-height: 36px;
+                letter-spacing: -.75px;
+            }
+
+            .container {
+                margin: auto;
+                width: 40%;
+                min-width: 400px;
+                background: #ffffff;
+            }
+
+            a.green-btn {
+                border-top: 13px solid;
+                border-bottom: 13px solid;
+                border-right: 24px solid;
+                border-left: 24px solid;
+                border-color: #2ea664;
+                border-radius: 4px;
+                background-color: #2ea664;
+                color: #ffffff;
+                font-size: 18px;
+                text-decoration: none;
+                display: inline-block;
+            }
+
+            .header {
+                background-color: #263238;
+                padding: 10px 0;
+            }
+
+            .header img {
+                height: 2rem;
+                padding: 5px 20px;
+            }
+
+            .body {
+                padding: 20px;
+            }
+
+            .text-center {
+                text-align: center;
+            }
+
+            .text-gray {
+                color: #9c9ea1;
+            }
+
+            .code {
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: #9c9ea1;
+                letter-spacing: 1.5px;
+            }
+        </style>
+        {% block style %}{% endblock %}
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <!--<img src="{{ site }}{% static 'images/logo_small.png' %}">-->
+                <img src="https://www.trackfly.com/wp-content/uploads/2020/02/logo.png">
+                <!--<img src="https://dev.trackfly.com/wp-content/uploads/2020/04/Logo_FullColour-300x55.png" alt="Trackfly">-->
+            </div>
+            <div class="body">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </body>
+</html>

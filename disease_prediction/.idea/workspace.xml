@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:product-upload-from-csv" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e204efd4-8f2e-4ebc-8d89-8513fb46b87a" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/catalog" />
+                    <option name="lastUsedInstant" value="1606106092" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/csv_import" />
+                    <option name="lastUsedInstant" value="1606105840" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/auth-nav" />
+                    <option name="lastUsedInstant" value="1605862312" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1605685991" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1605685703" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="JupyterTrust" id="8e5ff920-d215-4008-b4a7-3c9658196269" />
+  <component name="ProjectId" id="1kB0pJvkrl3VIUoINmHybIHzvW2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/MyProject/EcommerceApp" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/layouts" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e204efd4-8f2e-4ebc-8d89-8513fb46b87a" name="Default Changelist" comment="" />
+      <created>1605158860801</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605158860801</updated>
+      <workItem from="1605158862224" duration="4221000" />
+      <workItem from="1605164898559" duration="622000" />
+      <workItem from="1605670195044" duration="794000" />
+      <workItem from="1605684682360" duration="16777000" />
+      <workItem from="1605756146996" duration="13420000" />
+      <workItem from="1605855645065" duration="1209000" />
+      <workItem from="1605857541048" duration="7673000" />
+      <workItem from="1606051613072" duration="5000" />
+      <workItem from="1606100778457" duration="16480000" />
+      <workItem from="1606363491133" duration="172000" />
+      <workItem from="1606911399316" duration="1450000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="690" y="255" width="530" height="605" key="FileChooserDialogImpl" timestamp="1606913937646">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="690" y="255" width="530" height="605" key="FileChooserDialogImpl/0.28.1920.1052@0.28.1920.1052" timestamp="1606913937646" />
+    <state x="478" y="149" width="953" height="816" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605159810878">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="478" y="149" width="953" height="816" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.28.1920.1052@0.28.1920.1052" timestamp="1605159810878" />
+    <state x="1046" y="129" width="764" height="951" key="find.popup" timestamp="1605858731819">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="1046" y="129" width="764" height="951" key="find.popup/0.28.1920.1052@0.28.1920.1052" timestamp="1605858731819" />
+    <state x="539" y="45" width="840" height="1034" key="search.everywhere.popup" timestamp="1605862287584">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="539" y="45" width="840" height="1034" key="search.everywhere.popup/0.28.1920.1052@0.28.1920.1052" timestamp="1605862287584" />
+  </component>
+</project>

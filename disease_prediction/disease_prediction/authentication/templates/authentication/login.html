@@ -1,0 +1,76 @@
+{% extends 'layouts/login.html' %}
+{% load static %}
+
+<!--{% block head_title %} Home {% endblock %}-->
+{% block page_title %} Login {% endblock %}
+{%block stylesheet %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+{% endblock%}
+{% block content %}
+
+<div class="login overflow-hidden">
+    <div class="login__container mx-auto mt-5">
+        <div class="login__header d-flex justify-content-center">
+            <h2>LOGIN</h2>
+        </div>
+        {% include 'snippets/messages.html' %}
+        <form action="{% url 'authentication:login' %}" class="login__userForm" id="userForm" method="POST">
+            {% csrf_token %}
+            <div class="form-group  has-error">
+                <label><strong>Email</strong></label>
+                <input type="text" name="email" id="email" class="form-control" required>
+                <div class="help-block with-errors">
+                </div>
+            </div>
+            <div class="form-group  has-error">
+                <label><strong>Password</strong></label>
+                <input type="password" name="password" class="form-control" id="password" required>
+                <div class="help-block with-errors">
+                </div>
+            </div>
+            <div class="login__passwordReset">
+                <a href="{% url 'authentication:forgot_password' %}">Forget your password? </a>
+            </div>
+            <button type="submit" class="btn btn-primary btn-md btn-block login_button " id="login_button">LOG IN
+            </button>
+        </form>
+        <h6 class="policy">By continuing, you agree to accept our</h6>
+        <h6 class="policy">Privacy Policy & Terms of Service.</h6>
+
+        <h5 class="register__login">DON'T HAVE AN ACCOUNT? REGISTER <a
+                href="{% url 'authentication:register' %}">HERE</a>
+        </h5>
+<!--        {#-->
+<!--        <div class="row">#}-->
+<!--            {#-->
+<!--            <div class="col-5">#}-->
+<!--                {# <h3 class="mt-4">Retailer:</h3>#}-->
+<!--                {##}-->
+<!--                {#-->
+<!--            </div>-->
+<!--            #}-->
+<!--            {#-->
+<!--            <div class="col-7">#}-->
+<!--                {#-->
+<!--                <button class="btn btn-outline-primary btn-lg" #}-->
+<!--                        {# onclick="window.location='{{retailer_trackly_oauth_url}}'" #}-->
+<!--                        {#>Login with TrackFly#}-->
+<!--                    {#-->
+<!--                </button>-->
+<!--                #}-->
+<!--                {#-->
+<!--            </div>-->
+<!--            #}-->
+<!--            {#-->
+<!--        </div>-->
+<!--        #}-->
+    </div>
+</div>
+
+
+<script type="text/javascript" src="{% static 'js/password.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery_validation.js' %}"></script>
+<script>
+    $('#userForm').validate();
+</script>
+{% endblock %}

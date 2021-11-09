@@ -1,0 +1,65 @@
+body {
+    background-color: lightgray;
+    background-attachment: fixed;
+}
+
+.register {
+    height: 100vh;
+    width: 100%;
+}
+
+.help-block.with-errors {
+    color: #EF6F6C;
+}
+.required_class{
+    color:#FF0000;
+}
+.login__header{
+    margin-left:30px;
+}
+.register__container {
+    width: 750px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 12), 0 1px 2px rgba(0, 0, 0, 24);
+    margin-left: 10%;
+    margin-top: 20%;
+}
+.register__form{
+    margin-left:30px;
+    width:640px;
+}
+
+.register_button {
+    background-color:#eebf31 !important;
+    color:#333;
+    font-weight: bold !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    line-height: 1.8 !important;
+    letter-spacing: 0.7px !important;
+    margin-bottom: 10px;
+}
+
+.policy{
+    font-size:smaller;
+    text-align: center;
+}
+
+.register__login {
+    text-align: center;
+    color:lightgray;
+    margin-top:10px;
+    font-size:15px;
+}
+.register__login > a {
+    color: lightgray;
+    text-decoration: underline;
+
+}
+
+

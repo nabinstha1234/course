@@ -1,0 +1,125 @@
+/* line numbers */
+/*.container{
+    width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 100px 250px 400px 100px;
+    grid-gap: 10px;
+}
+.item{
+    background-color: red;
+}
+
+.item--1{
+    grid-column: 1/-1;
+}
+
+.item--5{
+    grid-column: 4/5;
+    grid-row: 2/4;
+}
+.item--6{
+    grid-area: 3/1/4/4;
+}
+
+.item--7{
+    grid-column: 1/-1;
+}
+*/
+
+/* METHOD 2: LINE NAMES */
+
+/* .container{
+    width: 1000px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns:repeat(3,1fr) 200px;
+    grid-template-rows: [header-start] 100px [header-end box-start] 200px [box-end main-start] 400px [main-end footer-start]100px[footer-end];
+    grid-gap: 30px;
+}
+
+.item{
+    background-color: red;
+}
+
+.item--1{
+    grid-column: header-start/ header-end;
+}
+
+.item--5{
+    grid-column: 4/5;
+    grid-row: 2/4;
+}
+.item--6{
+    grid-area: 3/1/4/4;
+}
+
+.item--7{
+    grid-column: 1/-1;
+} */
+
+/* Method 3: Name grid areas */
+
+/* .container{
+    width: 1000px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns:100px 100px 100px 100px;
+    grid-template-rows: repeat(3, 1fr) 200px;
+    grid-gap: 30px;
+    grid-template-areas: '. head head .'
+                        'box-2 box-3 box-4 side'
+                        'main main main side'
+                        'foot foot foot foot';
+}
+
+.item{
+    background-color: red;
+    height: 100px;
+
+}
+
+.item--1{
+    /* grid-column: header-start/ header-end; */
+    grid-area: head;
+/*}
+*/
+/* 
+.item--2{
+    grid-area: box-2; 
+  }
+  .item--3{
+    grid-area: box-3; 
+  }
+
+.item--4{
+  grid-area: box-4; 
+}
+.item--5{
+    grid-area: side;
+}
+.item--6{
+    grid-area: main;
+}
+
+.item--7{
+    grid-column: foot;
+} */
+
+.container{
+    width: 1000px;
+    margin: 30px auto;
+    display: grid;
+    background-color: #ddd;
+    grid-template-rows: repeat(2,150px);
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+} 
+
+.item{
+    padding: 20px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 30px;
+    background-color: orangered;
+}

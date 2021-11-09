@@ -1,0 +1,76 @@
+.logo {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.logo__image {
+    display: flex;
+    margin-bottom: 20px;
+    width: 50px;
+
+}
+
+.logo > .logo__title > h2 {
+    display: flex;
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+table.scrollable-table{
+    height: 100%;
+    border-collapse: separate;
+}
+table.scrollable-table thead{
+    background: #45423E;
+    border-radius: 9px 9px 0 0;
+    color: #EEBF31;
+}
+table.scrollable-table tbody {
+    display:block;
+    overflow:auto;
+    height: 55vh;
+    background: #ffffff;
+}
+
+table.scrollable-table thead, table.scrollable-table tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;/* even columns width , fix width of table too*/
+}
+
+table.scrollable-table tbody tr{
+    border: 1px solid #eee;
+    margin: 15px;
+    border-radius: 9px;
+    box-shadow: 3px 3px 10px #00000029;
+    width: 98%;
+}
+
+table.scrollable-table tbody tr td{
+    padding: 0.25rem;
+    border-top: 0;
+}
+
+table.scrollable-table thead tr th:nth-child(1), table.scrollable-table thead tr th:nth-child(3),
+table.scrollable-table tbody tr td:nth-child(1), table.scrollable-table tbody tr td:nth-child(3){
+    width: 10%;
+}
+table.scrollable-table thead tr th:nth-child(2), table.scrollable-table thead tr th:nth-child(4),
+table.scrollable-table tbody tr td:nth-child(2), table.scrollable-table tbody tr td:nth-child(4){
+    width: 40%;
+}
+table.scrollable-table thead {
+    border-spacing: 0;
+}
+
+
+/* Track */
+table.scrollable-table tbody::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+/* Handle */
+table.scrollable-table tbody::-webkit-scrollbar-thumb {
+  background-color: #EEBF31;
+}
